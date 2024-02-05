@@ -1,0 +1,8 @@
+
+<section class="w-full flex flex-wrap justify-center gap-6 p-4 max-h-screen overflow-y-auto" style="max-height: calc(79vh);">
+  @for (client of clients(); track client.id) {
+    <app-client-card class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 flex-col" [client]="client"/>
+  } @empty {
+    <h4>Clients not found</h4>
+  }
+</section>

@@ -1,0 +1,24 @@
+@if( client ){
+  <article class="bg-slate-50 w-full flex-col">
+    <header class="relative bg-cover bg-center bg-no-repeat p-4 flex-col w-full justify-center items-center" style="background-image: url('https://thefreenature.com/wp-content/uploads/2022/05/bosquedemontana.jpg');">
+      <!-- Fondo azul transparente -->
+      <div class="absolute inset-0 bg-blue-700 opacity-50"></div>
+  
+      <img class="rounded-full w-32 h-32 mt-2 mx-auto flex-shrink-0 relative z-10" [src]="client.photo" alt="">
+      <h4 class="text-white text-center relative z-10 pt-2">Luis Miguel</h4>
+    </header>
+    <body class="p-4">
+      <div class="border-b-2 border-slate-300 flex justify-between mb-2">
+        <p>Genero</p>
+        <strong>{{ client.genre }}</strong>
+      </div>
+      <div class="border-b-2 border-slate-300 flex justify-between">
+        <p>Identificación</p>
+        <strong>{{ client.dni }}</strong>
+      </div>
+    </body>
+    <footer class="p-4">
+      <button (click)="goToClientDetail(0)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
+    </footer>
+  </article>
+}

@@ -11,12 +11,22 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/clients/clients.component'),
       },
       {
+        path: 'client/:id',
+        title: 'Client Details',
+        loadComponent: () => import('./dashboard/pages/client-detail/client-detail.component')
+      },
+      {
         path: 'employees',
         title: 'Employees',
         loadComponent: () => import('./dashboard/pages/employees/employees.component'),
       },
       {
-        path: 'general consultation',
+        path: 'employee/:id',
+        title: 'Employee Details',
+        loadComponent: () => import('./dashboard/pages/employee-detail/employee-detail.component')
+      },
+      {
+        path: 'general-consultation',
         title: 'General Consultation',
         loadComponent: () => import('./dashboard/pages/general-consultation/general-consultation.component'),
       },
@@ -26,9 +36,19 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/pets/pets.component'),
       },
       {
+        path: 'pet/:id',
+        title: 'Pet detail',
+        loadComponent: () => import('./dashboard/pages/pet-detail/pet-detail.component')
+      },
+      {
         path: 'specie',
         title: 'Specie',
         loadComponent: () => import('./dashboard/pages/specie/specie.component'),
+      },
+      {
+        path: 'specie/:id',
+        title: 'Specie detail',
+        loadComponent: () => import('./dashboard/pages/specie-detail/specie-detail.component')
       },
       {
         path: '', 

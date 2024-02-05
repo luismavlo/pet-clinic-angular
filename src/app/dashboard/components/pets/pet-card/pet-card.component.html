@@ -1,0 +1,32 @@
+@if( pet ){
+  <article class="bg-slate-50 w-full flex-col">
+    <header class="relative bg-cover bg-center bg-no-repeat p-4 flex-col w-full justify-center items-center" style="background-image: url('https://static.dw.com/image/15885952_604.jpg');">
+      <!-- Fondo azul transparente -->
+      <div class="absolute inset-0 bg-blue-700 opacity-50"></div>
+  
+      <img class="rounded-full w-32 h-32 mt-2 mx-auto flex-shrink-0 relative z-10" [src]="pet.photo" alt="">
+      <h4 class="text-white text-center relative z-10 pt-2">{{ pet.name }}</h4>
+    </header>
+    <body class="p-4">
+      <div class="border-b-2 border-slate-300 flex justify-between mb-2">
+        <p>Especie</p>
+        <strong>{{ pet.specie.name }}</strong>
+      </div>
+      <div class="border-b-2 border-slate-300 flex justify-between mb-2">
+        <p>Raza</p>
+        <strong>{{ pet.race }}</strong>
+      </div>
+      <div class="border-b-2 border-slate-300 flex justify-between mb-2">
+        <p>Dueño</p>
+        <strong>Luis Miguel</strong>
+      </div>
+      <div class="border-b-2 border-slate-300 flex justify-between">
+        <p>Dni del dueño</p>
+        <strong>1091675245</strong>
+      </div>
+    </body>
+    <footer class="p-4">
+      <button (click)="goToPetDetail(0)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
+    </footer>
+  </article>
+}

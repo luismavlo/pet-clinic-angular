@@ -1,0 +1,76 @@
+<form class="p-4 max-w-3xl mx-auto space-y-6">
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="name">Nombres</label>
+      <input
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        name="name"
+        type="text"
+        id="name"
+      />
+    </div>
+    <div class="w-1/2">
+      <label for="birthdate">Fecha de nacimiento</label>
+      <input
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        name="birthdate"
+        type="text"
+        id="birthdate"
+      />
+    </div>
+  </div>
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="raze">raza</label>
+      <input
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        name="raze"
+        type="text"
+        id="raze"
+      />
+    </div>
+    <div class="w-1/2">
+      <label for="photo">Link de la foto</label>
+      <input
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        name="photo"
+        type="url"
+        id="photo"
+      />
+    </div>
+  </div>
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label>Especie</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+      >
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+        <option value="conejo">Conejo</option>
+      </select>
+    </div>
+    <div class="w-1/2">
+      <label>Dueño</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+      >
+        <option value="1">Luis Miguel</option>
+        <option value="2">Fernanda Torres</option>
+        <option value="3">Plutarco</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <button
+      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors mr-2"
+    >
+      Crear
+    </button>
+    <button
+      class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors"
+    >
+      Eliminar
+    </button>
+  </div>
+</form>
