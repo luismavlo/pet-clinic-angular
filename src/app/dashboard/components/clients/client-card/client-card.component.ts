@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class ClientCardComponent { 
 
-  @Input() client!: Client;
+  @Input({ required: true }) client!: Client;
 
   private router = inject( Router );
 

@@ -1,44 +1,65 @@
 
 
-<form class="p-4 max-w-3xl mx-auto space-y-6">
+<form [formGroup]="formClient" (ngSubmit)="onSave()" class="p-4 max-w-3xl mx-auto space-y-6">
   <div class="flex space-x-4">
     <div class="w-1/2">
       <label for="name">Nombres</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="name" type="text" id="name">
+      <input formControlName="name" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="name" type="text" id="name">
+      @if(formClient.touched){
+        <span customLabel [errors]="formClient.get('name')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
     <div class="w-1/2">
       <label for="surname">Apellidos</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="surname" type="text" id="surname">
+      <input formControlName="surname" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="surname" type="text" id="surname">
+      @if(formClient.touched){
+        <span customLabel [errors]="formClient.get('surname')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
   </div>
   <div class="flex space-x-4"> 
     <div class="w-1/2">
       <label for="dni">Identificación</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="dni" type="text" id="dni">
+      <input formControlName="dni" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="dni" type="text" id="dni">
+      @if(formClient.touched){
+        <span customLabel [errors]="formClient.get('dni')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
     <div class="w-1/2">
       <label for="email">Correo Electrónico</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="email" type="email" id="email">
+      <input formControlName="email" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="email" type="email" id="email">
+      @if(formClient.touched){
+        <span customLabel [errors]="formClient.get('email')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
   </div>
   <div class="flex space-x-4">
     <div class="w-1/2">
       <label for="phone">Telefono</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="phone" type="text" id="phone">
+      <input formControlName="phone" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="phone" type="text" id="phone">
+      @if(formClient.touched){
+        <span customLabel [errors]="formClient.get('phone')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
     <div class="w-1/2" >
       <label>Genero</label>
-      <select class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500">
+      <select formControlName="genre" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500">
         <option value="male">Hombre</option>
         <option value="female">Mujer</option>
         <option value="prefer_not_to_say">Prefiero no decir</option>
       </select>
+      @if(formClient.touched){
+        <span customLabel [errors]="formClient.get('genre')?.errors" id="name-error" class="text-red-500"></span> 
+      }
     </div>
   </div>
 
   <div>
     <label for="photo">Link de la foto</label>
-    <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="photo" type="url" id="photo">
+    <input formControlName="photo" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="photo" type="url" id="photo">
+    @if(formClient.touched){
+      <span customLabel [errors]="formClient.get('photo')?.errors" id="name-error" class="text-red-500"></span>   
+    }
   </div>
 
   <div>

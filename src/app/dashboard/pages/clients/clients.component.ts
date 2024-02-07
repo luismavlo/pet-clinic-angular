@@ -1,3 +1,4 @@
+import { LoadingComponent } from './../../../shared/loading/loading.component';
 import { Router } from '@angular/router';
 import { ClientListComponent } from './../../components/clients/client-list/client-list.component';
 import { FormClientComponent } from './../../components/clients/form-client/form-client.component';
@@ -10,7 +11,8 @@ import { Component, inject } from '@angular/core';
   imports: [
     SectionTitleComponent,
     FormClientComponent,
-    ClientListComponent
+    ClientListComponent,
+    LoadingComponent
   ],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.css'

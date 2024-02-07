@@ -3,6 +3,7 @@ import { FormPetComponent } from './../../components/pets/form-pet/form-pet.comp
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionTitleComponent } from "../../components/commons/section-title/section-title.component";
+import { LoadingComponent } from '@shared/loading/loading.component';
 
 @Component({
   selector: 'app-pet-detail',
@@ -11,7 +12,8 @@ import { SectionTitleComponent } from "../../components/commons/section-title/se
     CommonModule,
     SectionTitleComponent,
     FormPetComponent,
-    MoreInformationComponent
+    MoreInformationComponent,
+    LoadingComponent
   ],
   templateUrl: './pet-detail.component.html',
   styleUrl: './pet-detail.component.css',

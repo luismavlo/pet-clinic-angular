@@ -2,6 +2,7 @@ import { FormEmployeeComponent } from './../../components/employees/form-employe
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionTitleComponent } from '../../components/commons/section-title/section-title.component';
+import { LoadingComponent } from '@shared/loading/loading.component';
 
 @Component({
   selector: 'app-employee-detail',
@@ -9,7 +10,8 @@ import { SectionTitleComponent } from '../../components/commons/section-title/se
   imports: [
     CommonModule,
     FormEmployeeComponent,
-    SectionTitleComponent
+    SectionTitleComponent,
+    LoadingComponent
   ],
   templateUrl: './employee-detail.component.html',
   styleUrl: './employee-detail.component.css',

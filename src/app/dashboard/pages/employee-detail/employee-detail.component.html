@@ -1,5 +1,9 @@
 <app-section-title title="Gestionar Empleados" />
 
 <section class="bg-white p-6 mt-4 shadow h-max w-full">
-  <app-form-employee />
+  @defer () {
+    <app-form-employee />
+  } @placeholder {
+    <app-loading />
+  }
 </section>

@@ -14,6 +14,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class SectionTitleComponent {
 
-  @Input() title: string = '';
+  @Input({ required: true }) title: string = '';
 
 }

@@ -1,0 +1,51 @@
+
+<form [formGroup]="formSpecie" (ngSubmit)="onSave()" class="p-4 max-w-3xl mx-auto space-y-6">
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="name">Nombre de la especie</label>
+      <input
+        formControlName="name"
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        name="name"
+        type="text"
+        id="name"
+      />
+      @if(formSpecie.touched){
+        <span customLabel [errors]="formSpecie.get('name')?.errors" id="name-error" class="text-red-500"></span>
+      }
+    </div>
+    <div class="w-1/2">
+      <label for="photo">Link de la foto</label>
+      <input
+        formControlName="photo"
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        name="photo"
+        type="url"
+        id="photo"
+      />
+      @if(formSpecie.touched){
+        <span customLabel [errors]="formSpecie.get('photo')?.errors" id="name-error" class="text-red-500"></span>
+      }
+    </div>
+  </div>
+  <div>
+      <label for="description">Descripcion</label>
+      <textarea formControlName="description" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="description" id="" cols="30" rows="4"></textarea>
+      @if(formSpecie.touched){
+        <span customLabel [errors]="formSpecie.get('description')?.errors" id="name-error" class="text-red-500"></span>
+      }
+    </div>
+ 
+  <div>
+    <button
+      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors mr-2"
+    >
+      Crear
+    </button>
+    <button
+      class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors"
+    >
+      Eliminar
+    </button>
+  </div>
+</form>

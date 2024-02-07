@@ -46,9 +46,24 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/specie/specie.component'),
       },
       {
-        path: 'specie/:id',
-        title: 'Specie detail',
-        loadComponent: () => import('./dashboard/pages/specie-detail/specie-detail.component')
+        path: 'consultation-list',
+        title: 'Consultation List',
+        loadComponent: () => import('./dashboard/pages/list-consultation/list-consultation.component')
+      },
+      {
+        path: 'working-hours',
+        title: 'Working Hours',
+        loadComponent: () => import('./dashboard/pages/working-hours/working-hours.component')
+      },
+      {
+        path: 'schedule-consultation',
+        title: 'Schedule Consultation',
+        loadComponent: () => import('./dashboard/pages/schedule-consultation/schedule-consultation.component')
+      },
+      {
+        path: 'manage-consultation',
+        title: 'Manage Consultation',
+        loadComponent: () => import('./dashboard/pages/manage-consultation/manage-consultation.component')
       },
       {
         path: '', 

@@ -1,3 +1,4 @@
+import { LoadingComponent } from './../../../shared/loading/loading.component';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionTitleComponent } from '../../components/commons/section-title/section-title.component';
@@ -9,7 +10,8 @@ import { FormClientComponent } from '../../components/clients/form-client/form-c
   imports: [
     CommonModule,
     SectionTitleComponent,
-    FormClientComponent
+    FormClientComponent,
+    LoadingComponent
   ],
   templateUrl: './client-detail.component.html',
   styleUrl: './client-detail.component.css',

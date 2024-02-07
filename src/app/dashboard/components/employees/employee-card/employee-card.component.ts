@@ -17,7 +17,7 @@ import { Employee } from "../../../../interfaces/employee.interface";
 })
 export class EmployeeCardComponent { 
 
-  @Input() employee!: Employee;
+  @Input({ required: true }) employee!: Employee;
 
   private router = inject( Router );
 

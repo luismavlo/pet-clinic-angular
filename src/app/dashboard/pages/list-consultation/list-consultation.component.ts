@@ -2,13 +2,13 @@ import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-specie-detail',
+  selector: 'app-list-consultation',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  templateUrl: './specie-detail.component.html',
-  styleUrl: './specie-detail.component.css',
+  templateUrl: './list-consultation.component.html',
+  styleUrl: './list-consultation.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class SpecieDetailComponent { }
+export default class ListConsultationComponent { }

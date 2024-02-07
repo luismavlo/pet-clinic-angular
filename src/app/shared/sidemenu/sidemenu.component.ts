@@ -17,5 +17,6 @@ export class SidemenuComponent {
   .flat()
   .filter(route => route && route.path)
   .filter(route => !route.path?.includes(':'))
+  .slice(0, 5)
 
 }

@@ -2,11 +2,19 @@
 
 <div class="overflow-y-auto" style="max-height: calc(87vh);">
   <section class="bg-white p-6 mt-4 shadow h-max w-full">
-    <app-form-pet />
+    @defer () {
+      <app-form-pet />
+    } @placeholder {
+      <app-loading />  
+    }
   </section>
   
   <section class="bg-white p-6 mt-4 shadow h-max w-full">
-    <app-more-information />
+    @defer () {
+      <app-more-information />
+    } @placeholder {
+      <app-loading />  
+    }
   </section>
 </div>
 

@@ -5,7 +5,13 @@
     <app-sidemenu />
 
     <div class="text-black px-2 mt-2 w-full">
-      <router-outlet></router-outlet>
+      @defer () {
+        <router-outlet></router-outlet>
+      } @placeholder {
+        <div class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-75 z-50">
+          <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-100"></div>
+        </div>        
+      }
     </div>    
   </div>
 </div>

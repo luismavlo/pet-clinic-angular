@@ -1,58 +1,88 @@
 
 
-<form class="p-4 max-w-3xl mx-auto space-y-6">
+<form [formGroup]="formEmployee" (ngSubmit)="onSave()" class="p-4 max-w-3xl mx-auto space-y-6">
   <div class="flex space-x-4">
     <div class="w-1/2">
       <label for="name">Nombres</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="name" type="text" id="name">
+      <input formControlName="name" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="name" type="text" id="name">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('name')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
     <div class="w-1/2">
       <label for="surname">Apellidos</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="surname" type="text" id="surname">
+      <input formControlName="surname" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="surname" type="text" id="surname">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('surname')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
   </div>
   <div class="flex space-x-4"> 
     <div class="w-1/2">
       <label for="dni">Identificación</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="dni" type="text" id="dni">
+      <input formControlName="dni" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="dni" type="text" id="dni">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('dni')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
     <div class="w-1/2">
       <label for="email">Correo Electrónico</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="email" type="email" id="email">
+      <input formControlName="email" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="email" type="email" id="email">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('email')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
   </div>
   <div class="flex space-x-4">
     <div class="w-1/2">
       <label for="phone">Telefono</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="phone" type="text" id="phone">
+      <input formControlName="phone" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="phone" type="text" id="phone">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('phone')?.errors" id="name-error" class="text-red-500"></span>
+      }
     </div>
     <div class="w-1/2" >
       <label>Genero</label>
-      <select class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500">
+      <select formControlName="genre" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500">
         <option value="male">Hombre</option>
         <option value="female">Mujer</option>
         <option value="prefer_not_to_say">Prefiero no decir</option>
       </select>
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('genre')?.errors" id="name-error" class="text-red-500"></span> 
+      }
     </div>
   </div>
   <div class="flex space-x-4">
     <div class="w-1/2">
       <label for="photo">Link de la foto</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="photo" type="url" id="photo">
+      <input formControlName="photo" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="photo" type="url" id="photo">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('photo')?.errors" id="name-error" class="text-red-500"></span>   
+      }
     </div>
     <div class="w-1/2">
       <label for="occupation">Ocupación</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="occupation" type="text" id="occupation">
+      <input formControlName="occupation" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="occupation" type="text" id="occupation">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('occupation')?.errors" id="name-error" class="text-red-500"></span>   
+      }
     </div>
   </div>
   <div class="flex space-x-4">
     <div class="w-1/2">
       <label for="gross_salary">Salario</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="gross_salary" type="number" id="gross_salary">
+      <input formControlName="gross_salary" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="gross_salary" type="number" id="gross_salary">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('gross_salary')?.errors" id="name-error" class="text-red-500"></span>   
+      }
     </div>
     <div class="w-1/2">
       <label for="password">Contraseña</label>
-      <input class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="password" type="password" id="password">
+      <input formControlName="password" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="password" type="password" id="password">
+      @if(formEmployee.touched){
+        <span customLabel [errors]="formEmployee.get('password')?.errors" id="name-error" class="text-red-500"></span>   
+      }
     </div>
   </div>
   <div>

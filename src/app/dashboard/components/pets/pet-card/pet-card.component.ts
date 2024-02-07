@@ -15,7 +15,7 @@ import { Router } from "@angular/router";
 })
 export class PetCardComponent {
 
-  @Input() pet!: Pet;
+  @Input({ required: true }) pet!: Pet;
 
   private router = inject( Router );
 
