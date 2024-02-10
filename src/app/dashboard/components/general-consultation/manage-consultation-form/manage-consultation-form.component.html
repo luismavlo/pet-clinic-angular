@@ -1,0 +1,219 @@
+<form
+  [formGroup]="formManageConsultation"
+  (ngSubmit)="onSave()"
+  class="p-4 max-w-3xl mx-auto space-y-6"
+>
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="client_id">Seleccionar al Dueño: *</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="client_id"
+        name="client_id"
+        id="client_id"
+      >
+        <option>Luis Miguel</option>
+        <option>Jesus</option>
+        <option>Laura</option>
+        <option>Pedro</option>
+      </select>
+      @if (formManageConsultation.touched) {
+        <span
+          customLabel
+          [errors]="formManageConsultation.get('client_id')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+    <div class="w-1/2">
+      <label for="pet_id">Seleccionar la Mascota: *</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="pet_id"
+        name="pet_id"
+        id="pet_id"
+      >
+        <option>Atena</option>
+        <option>Kira</option>
+        <option>Pelusa</option>
+        <option>Pedro</option>
+      </select>
+      @if (formManageConsultation.touched) {
+        <span
+          customLabel
+          [errors]="formManageConsultation.get('pet_id')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+  </div>
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="schenduling_by">Asignado Por: *</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="schenduling_by"
+        name="schenduling_by"
+        id="schenduling_by"
+      >
+        <option>Atena</option>
+        <option>Kira</option>
+        <option>Pelusa</option>
+        <option>Pedro</option>
+      </select>
+      @if (formManageConsultation.touched) {
+        <span
+          customLabel
+          [errors]="formManageConsultation.get('schenduling_by')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+    <div class="w-1/2">
+      <label for="assigned_to">Asignar A: *</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="assigned_to"
+        name="assigned_to"
+        id="assigned_to"
+      >
+        <option>Atena</option>
+        <option>Kira</option>
+        <option>Pelusa</option>
+        <option>Pedro</option>
+      </select>
+      @if (formManageConsultation.touched) {
+        <span
+          customLabel
+          [errors]="formManageConsultation.get('assigned_to')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+  </div>
+  <div flex flex-col>
+    <div class="w-1/2">
+      <label for="appointment_date">Fecha de la consulta: *</label>
+      <input formControlName="appointment_date" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" type="datetime-local" name="appointment_date" id="appointment_date"  />
+    </div>
+  </div>
+  @if (formManageConsultation.touched) {
+    <span
+      customLabel
+      [errors]="formManageConsultation.get('appointment_date')?.errors"
+      id="name-error"
+      class="text-red-500"
+    ></span>
+  }
+  <div class="flex flex-col">
+    <label for="reason">Motivo de consulta</label>
+    <textarea
+      formControlName="reason"
+      class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+      name="reason"
+      id=""
+      cols="30"
+      rows="4"
+    ></textarea>
+    @if (formManageConsultation.touched) {
+      <span
+        customLabel
+        [errors]="formManageConsultation.get('reason')?.errors"
+        id="name-error"
+        class="text-red-500"
+      ></span>
+    }
+  </div>
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="blood_pressure">Presión Sanguinea: *</label>
+      <input
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="blood_pressure"
+        type="text"
+        name="blood_pressure"
+        id="blood_pressure"
+      />
+      @if (formManageConsultation.touched) {
+        <span
+          customLabel
+          [errors]="formManageConsultation.get('blood_pressure')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+    <div class="w-1/2">
+      <label for="heart_rate">Ritmo cardiaco: *</label>
+      <input
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        type="text"
+        name="heart_rate"
+        formControlName="heart_rate"
+        id="heart_rate"
+      />
+      @if (formManageConsultation.touched) {
+        <span
+          customLabel
+          [errors]="formManageConsultation.get('heart_rate')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+  </div>
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="breathing_frequency">Frecuencia respiratoria: *</label>
+      <input  class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" formControlName="breathing_frequency" type="text" name="breathing_frequency" id="breathing_frequency">
+      @if (formManageConsultation.touched) {
+        <span
+          customLabel
+          [errors]="formManageConsultation.get('breathing_frequency')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+    <div class="w-1/2">
+      <label for="body_temperature">Temperatura Corporal: *</label>
+      <input  class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" formControlName="body_temperature" type="text" name="body_temperature" id="body_temperature">
+      @if (formManageConsultation.touched) {
+        <span
+          customLabel
+          [errors]="formManageConsultation.get('body_temperature')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <label for="observations">Observaciones: *</label>
+    <textarea
+      formControlName="observations"
+      class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+      name="observations"
+      id=""
+      cols="30"
+      rows="4"
+    ></textarea>
+    @if (formManageConsultation.touched) {
+      <span
+        customLabel
+        [errors]="formManageConsultation.get('observations')?.errors"
+        id="name-error"
+        class="text-red-500"
+      ></span>
+    }
+  </div>
+  <button
+    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors mr-2"
+  >
+    Crear
+  </button>
+</form>

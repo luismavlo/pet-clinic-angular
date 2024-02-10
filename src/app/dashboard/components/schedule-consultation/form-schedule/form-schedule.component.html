@@ -1,0 +1,132 @@
+<form [formGroup]="formSchedule" (ngSubmit)="onSave()" class="p-4 max-w-3xl mx-auto space-y-6">
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="client_id">Seleccionar al Dueño: *</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="client_id"
+        name="client_id"
+        id="client_id"
+      >
+        <option>Luis Miguel</option>
+        <option>Jesus</option>
+        <option>Laura</option>
+        <option>Pedro</option>
+      </select>
+      @if (formSchedule.touched) {
+        <span
+          customLabel
+          [errors]="formSchedule.get('client_id')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+    <div class="w-1/2">
+      <label for="pet_id">Seleccionar la Mascota: *</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="pet_id"
+        name="pet_id"
+        id="pet_id"
+      >
+        <option>Atena</option>
+        <option>Kira</option>
+        <option>Pelusa</option>
+        <option>Pedro</option>
+      </select>
+      @if (formSchedule.touched) {
+        <span
+          customLabel
+          [errors]="formSchedule.get('pet_id')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+  </div>
+  <div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="schenduling_by">Asignado Por: *</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="schenduling_by"
+        name="schenduling_by"
+        id="schenduling_by"
+      >
+        <option>Atena</option>
+        <option>Kira</option>
+        <option>Pelusa</option>
+        <option>Pedro</option>
+      </select>
+      @if (formSchedule.touched) {
+        <span
+          customLabel
+          [errors]="formSchedule.get('schenduling_by')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+    <div class="w-1/2">
+      <label for="assigned_to">Asignar A: *</label>
+      <select
+        class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+        formControlName="assigned_to"
+        name="assigned_to"
+        id="assigned_to"
+      >
+        <option>Atena</option>
+        <option>Kira</option>
+        <option>Pelusa</option>
+        <option>Pedro</option>
+      </select>
+      @if (formSchedule.touched) {
+        <span
+          customLabel
+          [errors]="formSchedule.get('assigned_to')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+  </div>
+  <div flex flex-col>
+    <div class="w-1/2">
+      <label for="appointment_date">Fecha de la consulta: *</label>
+      <input formControlName="appointment_date" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" type="datetime-local" name="appointment_date" id="appointment_date"  />
+      @if (formSchedule.touched) {
+        <span
+          customLabel
+          [errors]="formSchedule.get('appointment_date')?.errors"
+          id="name-error"
+          class="text-red-500"
+        ></span>
+      }
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <label for="reason">Motivo de consulta: *</label>
+    <textarea
+      formControlName="reason"
+      class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
+      name="reason"
+      id=""
+      cols="30"
+      rows="4"
+    ></textarea>
+    @if (formSchedule.touched) {
+      <span
+        customLabel
+        [errors]="formSchedule.get('reason')?.errors"
+        id="name-error"
+        class="text-red-500"
+      ></span>
+    }
+  </div>
+  <button
+    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors mr-2"
+  >
+    Crear
+  </button>
+</form>
