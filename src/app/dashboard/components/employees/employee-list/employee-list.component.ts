@@ -19,40 +19,26 @@ export class EmployeeListComponent {
 
   public employees = signal<Employee[]>([
     {
-      id: 1,
-      name: 'Luis Miguel',
-      surname: 'Avendaño Lozano',
-      dni: '1091919234',
-      photo: 'https://img.freepik.com/foto-gratis/hombre-moreno-positiva-brazos-cruzados_1187-5797.jpg',
-      genre: 'male',
-      email: 'luis@gmail.com',
-      phone: '5645624',
-      occupation: 'Empleado',
-      gross_salary: 50000
-    },
-    {
-      id: 2,
-      name: 'Ana María',
-      surname: 'González Pérez',
-      dni: '2087654321',
-      photo: 'https://img.freepik.com/foto-gratis/hombre-moreno-positiva-brazos-cruzados_1187-5797.jpg',
-      genre: 'female',
-      email: 'ana@gmail.com',
-      phone: '9876543',
-      occupation: 'Administrativo',
-      gross_salary: 60000
-    },
-    {
-      id: 3,
-      name: 'Carlos Rodríguez',
-      surname: 'Ramírez Gómez',
-      dni: '3056789123',
-      photo: 'https://img.freepik.com/foto-gratis/hombre-joven-pensativo-traje-oscuro_1303-16078.jpg',
-      genre: 'male',
-      email: 'carlos@gmail.com',
-      phone: '1234567',
-      occupation: 'Analista',
-      gross_salary: 70000
+      "id": 1,
+      "occupation": "ing",
+      "gross_salary": 2000,
+      "email": "nilfer@gmail.com",
+      "password": "123",
+      "phone": "nada",
+      "user_id": 1,
+      "remember_token": null,
+      "created_at": null,
+      "updated_at": null,
+      "users": {
+        "id": 1,
+        "name": "NILFER",
+        "surname": "CFERN",
+        "dni": "45",
+        "genre": "M",
+        "photo": "NO HAY",
+        "created_at": null,
+        "updated_at": null
+      }
     },
   ])
 

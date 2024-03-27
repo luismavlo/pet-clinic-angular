@@ -1,5 +1,7 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Specie } from "../../../../interfaces/pet.interface";
+import { SpecieService } from "../../../../services/specie.service";
 
 @Component({
   selector: 'app-table-specie',
@@ -11,4 +13,22 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './table-specie.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableSpecieComponent { }
+export class TableSpecieComponent {
+
+  public specieService = inject( SpecieService )
+
+  public species: Specie[] = [{
+    "id": 1,
+    "name": "gato",
+    "descripcion": "mau",
+    "photo": "no hay",
+    "remember_token": null,
+    "created_at": null,
+    "updated_at": null
+  }]
+
+  selectSpecie( specie: Specie ){
+    this.specieService.setSpecieSelected( specie );
+  }
+
+}

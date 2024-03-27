@@ -9,26 +9,23 @@
     </tr>
   </thead>
   <tbody>
-    <!-- Ejemplo de fila de datos -->
-    <tr>
-      <td class="py-2 px-4 border-b">1</td>
-      <td class="py-2 px-4 border-b">Ejemplo Nombre</td>
-      <td class="py-2 px-4 border-b">Ejemplo Descripción</td>
-      <td class="py-2 px-4 border-b">
-        <img
-          src="https://via.placeholder.com/50"
-          alt="Ejemplo Photo"
-          class="w-8 h-8"
-        />
-      </td>
-      <td class="py-2 px-4 border-b">
-        <button
-          class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition-colors mr-2"
-        >
-          Seleccionar
-        </button>
-      </td>
-    </tr>
+    @for (workingHour of workingHours(); track workingHour.id) {
+      <tr>
+        <td class="py-2 px-4 border-b">{{ workingHour.employees.email }}</td>
+        <td class="py-2 px-4 border-b">{{ workingHour.appointment_duration }}</td>
+        <td class="py-2 px-4 border-b">{{ workingHour.shift_duration }}</td>
+        <td class="py-2 px-4 border-b">{{ workingHour.start_date }} - {{ workingHour.end_date }} </td>
+        <td class="py-2 px-4 border-b">
+          <button
+            (click)="selectWorkingHour(workingHour)"
+            class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition-colors mr-2"
+          >
+            Seleccionar
+          </button>
+        </td>
+      </tr>
+    }
+    
 
 
   </tbody>

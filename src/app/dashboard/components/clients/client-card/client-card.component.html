@@ -4,21 +4,21 @@
       <!-- Fondo azul transparente -->
       <div class="absolute inset-0 bg-blue-700 opacity-50"></div>
   
-      <img class="rounded-full w-32 h-32 mt-2 mx-auto flex-shrink-0 relative z-10" [src]="client.photo" alt="">
+      <img class="rounded-full w-32 h-32 mt-2 mx-auto flex-shrink-0 relative z-10" [src]="client.users.photo" alt="">
       <h4 class="text-white text-center relative z-10 pt-2">Luis Miguel</h4>
     </header>
     <body class="p-4">
       <div class="border-b-2 border-slate-300 flex justify-between mb-2">
         <p>Genero</p>
-        <strong>{{ client.genre }}</strong>
+        <strong>{{ client.users.genre }}</strong>
       </div>
       <div class="border-b-2 border-slate-300 flex justify-between">
         <p>Identificación</p>
-        <strong>{{ client.dni }}</strong>
+        <strong>{{ client.users.dni }}</strong>
       </div>
     </body>
     <footer class="p-4">
-      <button (click)="goToClientDetail(0)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
+      <button (click)="goToClientDetail(client.id)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
     </footer>
   </article>
 }

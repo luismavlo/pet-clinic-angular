@@ -1,15 +1,23 @@
-export interface Clients {
-  clients: Client[]
+export interface Client {
+  id:             number;
+  user_id:        number;
+  phone:          string;
+  email:          string;
+  password:       string;
+  remember_token: null |  Date | string;
+  created_at:     null |  Date | string;
+  updated_at:     null |  Date | string;
+  users:          User;
 }
 
-export interface Client {
-  id:      number;
-  name:    string;
-  surname: string;
-  dni:     string;
-  photo:   string;
-  genre:   string;
-  email:   string;
-  phone:   string;
-  password?: string;
+export interface User {
+  id:         number;
+  name:       string;
+  surname:    string;
+  dni:        string;
+  genre:      string;
+  photo:      string;
+  created_at: null |  Date | string; 
+  updated_at: null |  Date | string;
 }
+

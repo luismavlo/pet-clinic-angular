@@ -18,15 +18,15 @@
       </div>
       <div class="border-b-2 border-slate-300 flex justify-between mb-2">
         <p>Dueño</p>
-        <strong>Luis Miguel</strong>
+        <strong>{{ pet.client.email }}</strong>
       </div>
       <div class="border-b-2 border-slate-300 flex justify-between">
         <p>Dni del dueño</p>
-        <strong>1091675245</strong>
+        <strong>{{ pet.client.email }}</strong>
       </div>
     </body>
     <footer class="p-4">
-      <button (click)="goToPetDetail(0)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
+      <button (click)="goToPetDetail(pet.id)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
     </footer>
   </article>
 }
