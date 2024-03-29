@@ -62,9 +62,9 @@
         formControlName="specie_id"
         class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
       >
-        <option value="perro">Perro</option>
-        <option value="gato">Gato</option>
-        <option value="conejo">Conejo</option>
+        @for (specie of specieService.species(); track specie.id){
+          <option [value]="specie.id">{{ specie.name }}</option>
+        }
       </select>
       @if(formPet.touched){
         <span customLabel [errors]="formPet.get('specie_id')?.errors" id="name-error" class="text-red-500"></span>
@@ -76,9 +76,9 @@
         formControlName="client_id"
         class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
       >
-        <option value="1">Luis Miguel</option>
-        <option value="2">Fernanda Torres</option>
-        <option value="3">Plutarco</option>
+        @for (client of clientService.clients(); track client.id){
+          <option [value]="client.id">{{ client.users.name }}</option>
+        }
       </select>
       @if(formPet.touched){
         <span customLabel [errors]="formPet.get('client_id')?.errors" id="name-error" class="text-red-500"></span>
@@ -89,9 +89,11 @@
     <button
       class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors mr-2"
     >
-      Crear
+      {{ +petId! === 0 ? 'Crear' : 'Actualizar' }}
     </button>
     <button
+      type="button"
+      (click)="deletePet()"
       class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors"
     >
       Eliminar

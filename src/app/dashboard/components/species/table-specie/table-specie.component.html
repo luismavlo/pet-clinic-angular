@@ -1,3 +1,4 @@
+@defer (when !specieService.loading()){
 <table class="min-w-full bg-white border border-gray-300">
   <thead>
     <tr>
@@ -10,30 +11,38 @@
   </thead>
   <tbody>
     <!-- Ejemplo de fila de datos -->
-    @for (specie of species; track specie.id) {
-      <tr>
-        <td class="py-2 px-4 border-b">{{ specie.id }}</td>
-        <td class="py-2 px-4 border-b">{{ specie.name }}</td>
-        <td class="py-2 px-4 border-b">{{ specie.descripcion }}</td>
-        <td class="py-2 px-4 border-b">
-          <img
-            [src]=" specie.photo "
-            alt="Ejemplo Photo"
-            class="w-8 h-8"
-          />
-        </td>
-        <td class="py-2 px-4 border-b">
-          <button
-            (click)="selectSpecie(specie)"
-            class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition-colors mr-2"
-          >
-            Seleccionar
-          </button>
-        </td>
-      </tr>
-    }
-    
 
+        @for (specie of specieService.species(); track specie.id) {
+          <tr>
+            <td class="py-2 px-4 border-b">{{ specie.id }}</td>
+            <td class="py-2 px-4 border-b">{{ specie.name }}</td>
+            <td class="py-2 px-4 border-b">{{ specie.descripcion }}</td>
+            <td class="py-2 px-4 border-b">
+              <img
+                [src]=" specie.photo "
+                alt="Ejemplo Photo"
+                class="w-8 h-8"
+              />
+            </td>
+            <td class="py-2 px-4 border-b">
+              <button
+                (click)="selectSpecie(specie)"
+                class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition-colors mr-2"
+              >
+                Seleccionar
+              </button>
+
+              <button (click)="deleteSpecie(specie.id!)" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors mr-2" type="button">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        } @empty {
+          Sin registros...
+        }
 
   </tbody>
 </table>
+} @placeholder {
+  <app-loading></app-loading>
+}

@@ -1,3 +1,4 @@
+<script src="../../components/clients/client-list/client-list.component.ts"></script>
 <app-section-title title="Gestionar mascotas" />
 
 <div class="overflow-y-auto" style="max-height: calc(87vh);">
@@ -5,15 +6,7 @@
     @defer () {
       <app-form-pet />
     } @placeholder {
-      <app-loading />  
-    }
-  </section>
-  
-  <section class="bg-white p-6 mt-4 shadow h-max w-full">
-    @defer () {
-      <app-more-information />
-    } @placeholder {
-      <app-loading />  
+      <app-loading />
     }
   </section>
 </div>

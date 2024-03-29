@@ -3,7 +3,7 @@
     <header class="relative bg-cover bg-center bg-no-repeat p-4 flex-col w-full justify-center items-center" style="background-image: url('https://thefreenature.com/wp-content/uploads/2022/05/bosquedemontana.jpg');">
       <!-- Fondo azul transparente -->
       <div class="absolute inset-0 bg-blue-700 opacity-50"></div>
-  
+
       <img class="rounded-full w-32 h-32 mt-2 mx-auto flex-shrink-0 relative z-10" [src]="employee.users.photo" alt="">
       <h4 class="text-white text-center relative z-10 pt-2">{{ employee.users.name }}</h4>
     </header>
@@ -22,7 +22,7 @@
       </div>
     </body>
     <footer class="p-4">
-      <button (click)="goToEmployeeDetail(0)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
+      <button (click)="goToEmployeeDetail(employee.id!)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
     </footer>
   </article>
 }

@@ -4,6 +4,7 @@ import { ClientListComponent } from './../../components/clients/client-list/clie
 import { FormClientComponent } from './../../components/clients/form-client/form-client.component';
 import { SectionTitleComponent } from './../../components/commons/section-title/section-title.component';
 import { Component, inject } from '@angular/core';
+import {ClientService} from "../../../services/client.service";
 
 @Component({
   selector: 'app-clients',
@@ -20,9 +21,14 @@ import { Component, inject } from '@angular/core';
 export default class ClientsComponent {
 
   private router = inject( Router );
+  public clientService = inject( ClientService );
 
   goToClientDetail(clientId: number){
     this.router.navigate([`/dashboard/client`, clientId])
+  }
+
+  constructor() {
+    this.clientService.getClients();
   }
 
 }

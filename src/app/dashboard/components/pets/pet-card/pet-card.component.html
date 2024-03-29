@@ -3,7 +3,7 @@
     <header class="relative bg-cover bg-center bg-no-repeat p-4 flex-col w-full justify-center items-center" style="background-image: url('https://static.dw.com/image/15885952_604.jpg');">
       <!-- Fondo azul transparente -->
       <div class="absolute inset-0 bg-blue-700 opacity-50"></div>
-  
+
       <img class="rounded-full w-32 h-32 mt-2 mx-auto flex-shrink-0 relative z-10" [src]="pet.photo" alt="">
       <h4 class="text-white text-center relative z-10 pt-2">{{ pet.name }}</h4>
     </header>
@@ -16,17 +16,13 @@
         <p>Raza</p>
         <strong>{{ pet.race }}</strong>
       </div>
-      <div class="border-b-2 border-slate-300 flex justify-between mb-2">
-        <p>Dueño</p>
-        <strong>{{ pet.client.email }}</strong>
-      </div>
       <div class="border-b-2 border-slate-300 flex justify-between">
-        <p>Dni del dueño</p>
+        <p>email del dueño</p>
         <strong>{{ pet.client.email }}</strong>
       </div>
     </body>
     <footer class="p-4">
-      <button (click)="goToPetDetail(pet.id)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
+      <button (click)="goToPetDetail(pet.id!)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors w-full">Ver Detalle</button>
     </footer>
   </article>
 }

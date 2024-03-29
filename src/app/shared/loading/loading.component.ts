@@ -7,11 +7,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [
     CommonModule,
   ],
-  template: `
-    <div class="fixed inset-0 flex justify-center items-center bg-transparent z-50">
-      <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-100 bg-white"></div>
-    </div>  
-  `,
+  template: `<div class="lds-ripple-container">
+      <div class="lds-ripple">
+          <div></div>
+          <div></div>
+      </div>
+  </div>`,
   styleUrl: './loading.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

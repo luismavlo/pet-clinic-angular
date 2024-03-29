@@ -4,6 +4,7 @@ import { SectionTitleComponent } from '../../components/commons/section-title/se
 import { inject } from '@angular/core'
 import { Router } from '@angular/router';
 import { LoadingComponent } from '@shared/loading/loading.component';
+import {PetService} from "../../../services/pet.service";
 @Component({
   selector: 'app-pets',
   standalone: true,
@@ -17,8 +18,13 @@ import { LoadingComponent } from '@shared/loading/loading.component';
 })
 export default class PetsComponent {
   private router = inject( Router );
+  public petService = inject( PetService );
 
   goToPetDetail(petId: number){
     this.router.navigate([`/dashboard/pet`, petId])
+  }
+
+  constructor() {
+    this.petService.getPets()
   }
 }

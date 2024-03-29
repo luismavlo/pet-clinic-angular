@@ -7,17 +7,30 @@ export interface Client {
   remember_token: null |  Date | string;
   created_at:     null |  Date | string;
   updated_at:     null |  Date | string;
-  users:          User;
+  users:          Users;
 }
 
-export interface User {
+
+
+export interface Users {
   id:         number;
   name:       string;
   surname:    string;
   dni:        string;
   genre:      string;
   photo:      string;
-  created_at: null |  Date | string; 
+  created_at: null |  Date | string;
   updated_at: null |  Date | string;
+}
+
+export interface ClientPost {
+  name:       string;
+  surname:    string;
+  dni:        string;
+  email:      string;
+  password:   string;
+  phone:      string;
+  genre:      string;
+  photo:      string;
 }
 

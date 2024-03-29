@@ -17,7 +17,7 @@
       }
     </div>
   </div>
-  <div class="flex space-x-4"> 
+  <div class="flex space-x-4">
     <div class="w-1/2">
       <label for="dni">Identificación</label>
       <input formControlName="dni" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="dni" type="text" id="dni">
@@ -49,7 +49,7 @@
         <option value="prefer_not_to_say">Prefiero no decir</option>
       </select>
       @if(formEmployee.touched){
-        <span customLabel [errors]="formEmployee.get('genre')?.errors" id="name-error" class="text-red-500"></span> 
+        <span customLabel [errors]="formEmployee.get('genre')?.errors" id="name-error" class="text-red-500"></span>
       }
     </div>
   </div>
@@ -58,14 +58,14 @@
       <label for="photo">Link de la foto</label>
       <input formControlName="photo" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="photo" type="url" id="photo">
       @if(formEmployee.touched){
-        <span customLabel [errors]="formEmployee.get('photo')?.errors" id="name-error" class="text-red-500"></span>   
+        <span customLabel [errors]="formEmployee.get('photo')?.errors" id="name-error" class="text-red-500"></span>
       }
     </div>
     <div class="w-1/2">
       <label for="occupation">Ocupación</label>
       <input formControlName="occupation" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="occupation" type="text" id="occupation">
       @if(formEmployee.touched){
-        <span customLabel [errors]="formEmployee.get('occupation')?.errors" id="name-error" class="text-red-500"></span>   
+        <span customLabel [errors]="formEmployee.get('occupation')?.errors" id="name-error" class="text-red-500"></span>
       }
     </div>
   </div>
@@ -74,14 +74,14 @@
       <label for="gross_salary">Salario</label>
       <input formControlName="gross_salary" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="gross_salary" type="number" id="gross_salary">
       @if(formEmployee.touched){
-        <span customLabel [errors]="formEmployee.get('gross_salary')?.errors" id="name-error" class="text-red-500"></span>   
+        <span customLabel [errors]="formEmployee.get('gross_salary')?.errors" id="name-error" class="text-red-500"></span>
       }
     </div>
     <div class="w-1/2">
       <label for="password">Contraseña</label>
       <input formControlName="password" class="mt-1 border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" name="password" type="password" id="password">
       @if(formEmployee.touched){
-        <span customLabel [errors]="formEmployee.get('password')?.errors" id="name-error" class="text-red-500"></span>   
+        <span customLabel [errors]="formEmployee.get('password')?.errors" id="name-error" class="text-red-500"></span>
       }
     </div>
   </div>
@@ -89,7 +89,7 @@
     <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors mr-2">
       Crear
     </button>
-    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors">
+    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors" type="button" (click)="deleteEmployee()" >
       Eliminar
     </button>
   </div>

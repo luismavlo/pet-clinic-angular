@@ -4,6 +4,7 @@ import { SectionTitleComponent } from '../../components/commons/section-title/se
 import { inject } from '@angular/core'
 import { Router } from '@angular/router';
 import { LoadingComponent } from '@shared/loading/loading.component';
+import {EmployeeService} from "../../../services/employee.service";
 
 @Component({
   selector: 'app-employees',
@@ -18,9 +19,14 @@ import { LoadingComponent } from '@shared/loading/loading.component';
 })
 export default class EmployeesComponent {
   private router = inject( Router );
+  public employeeService = inject( EmployeeService )
 
   goToEmployeeDetail(employeeId: number){
     this.router.navigate([`/dashboard/employee`, employeeId])
+  }
+
+  constructor() {
+    this.employeeService.getEmployees();
   }
 
 }
