@@ -3,6 +3,8 @@ import { ChangeDetectionStrategy, Component, inject, effect } from '@angular/cor
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { CustomLabelDirective } from "@shared/directives/customLabel.directive";
 import { WorkingHourService } from "../../../../services/working-hour.service";
+import {ClientService} from "../../../../services/client.service";
+import {EmployeeService} from "../../../../services/employee.service";
 
 @Component({
   selector: 'app-form-working-hours',
@@ -19,6 +21,7 @@ import { WorkingHourService } from "../../../../services/working-hour.service";
 export class FormWorkingHoursComponent {
 
   public workingHourService = inject(WorkingHourService)
+  public employeeService = inject(EmployeeService);
 
   public formWorkingHour: FormGroup = this.fb.group({
     start_date: ['', [Validators.required]],
@@ -32,7 +35,9 @@ export class FormWorkingHoursComponent {
 
   constructor(
     private fb: FormBuilder
-  ){}
+  ){
+    this.employeeService.getEmployees();
+  }
 
   public workingHourSelectedEffect = effect(() => {
     this.formWorkingHour.patchValue({
@@ -52,7 +57,12 @@ export class FormWorkingHoursComponent {
       return;
     };
 
-    console.log(this.formWorkingHour.value)
+    this.workingHourService.createWorkingHour(this.formWorkingHour.value).subscribe(resp => {
+      console.log("se ha creado correctamente", resp)
+    })
+
+    this.workingHourService.getWorkingHours();
+
     this.formWorkingHour.reset();
   }
 

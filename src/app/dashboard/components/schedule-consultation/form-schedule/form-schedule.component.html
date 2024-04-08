@@ -8,10 +8,9 @@
         name="client_id"
         id="client_id"
       >
-        <option>Luis Miguel</option>
-        <option>Jesus</option>
-        <option>Laura</option>
-        <option>Pedro</option>
+        @for (pet of petService.pets(); track pet.id){
+          <option [value]="pet.id">{{ pet.client.email }}</option>
+        }
       </select>
       @if (formSchedule.touched) {
         <span
@@ -30,10 +29,9 @@
         name="pet_id"
         id="pet_id"
       >
-        <option>Atena</option>
-        <option>Kira</option>
-        <option>Pelusa</option>
-        <option>Pedro</option>
+        @for (pet of petService.pets(); track pet.id){
+          <option [value]="pet.id">{{ pet.name }}</option>
+        }
       </select>
       @if (formSchedule.touched) {
         <span
@@ -54,10 +52,9 @@
         name="schenduling_by"
         id="schenduling_by"
       >
-        <option>Atena</option>
-        <option>Kira</option>
-        <option>Pelusa</option>
-        <option>Pedro</option>
+        @for (employeeService of employeeService.employees(); track employeeService.id){
+          <option [value]="employeeService.id">{{ employeeService.email }}</option>
+        }
       </select>
       @if (formSchedule.touched) {
         <span
@@ -76,10 +73,9 @@
         name="assigned_to"
         id="assigned_to"
       >
-        <option>Atena</option>
-        <option>Kira</option>
-        <option>Pelusa</option>
-        <option>Pedro</option>
+        @for (employeeService of employeeService.employees(); track employeeService.id){
+          <option [value]="employeeService.id">{{ employeeService.email }}</option>
+        }
       </select>
       @if (formSchedule.touched) {
         <span

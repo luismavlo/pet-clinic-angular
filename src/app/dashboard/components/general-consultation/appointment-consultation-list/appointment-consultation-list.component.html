@@ -1,31 +1,43 @@
-<table class="min-w-full bg-white border border-gray-300">
-  <thead>
+@defer (when !generalConsultationService.loading()) {
+  <table class="min-w-full bg-white border border-gray-300">
+    <thead>
     <tr>
       <th class="py-2 px-4 border-b text-start">ID</th>
       <th class="py-2 px-4 border-b text-start">Mascota</th>
-      <th class="py-2 px-4 border-b text-start">Dueño</th>
-      <th class="py-2 px-4 border-b text-start">Fecha</th>
+      <th class="py-2 px-4 border-b text-start">Raza</th>
+      <th class="py-2 px-4 border-b text-start">Motivo de consulta</th>
       <th class="py-2 px-4 border-b text-start">Acción</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
     <!-- Ejemplo de fila de datos -->
-    <tr>
-      <td class="py-2 px-4 border-b">1</td>
-      <td class="py-2 px-4 border-b">Ejemplo Nombre</td>
-      <td class="py-2 px-4 border-b">Ejemplo Descripción</td>
-      <td class="py-2 px-4 border-b">
-        20 febrero - 10:00 am
-      </td>
-      <td class="py-2 px-4 border-b">
-        <button
-          class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition-colors mr-2"
-        >
-          Seleccionar
-        </button>
-      </td>
-    </tr>
+
+      @for ( appointment of generalConsultationService.generalConsultations(); track appointment.id ){
+        <tr>
+          <td class="py-2 px-4 border-b">1</td>
+          <td class="py-2 px-4 border-b">{{ appointment.pets.name }}</td>
+          <td class="py-2 px-4 border-b">{{ appointment.pets.race }}</td>
+          <td class="py-2 px-4 border-b">
+            {{ appointment.reason }}
+          </td>
+          <td class="py-2 px-4 border-b">
+            <button
+              class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition-colors mr-2"
+              (click)="selectAppointment(appointment)"
+            >
+              Seleccionar
+            </button>
+          </td>
+        </tr>
+      }
+
+
 
     <!-- Puedes agregar más filas según tus datos -->
-  </tbody>
-</table>
+    </tbody>
+  </table>
+
+} @placeholder (){
+  <app-loading></app-loading>
+}
+

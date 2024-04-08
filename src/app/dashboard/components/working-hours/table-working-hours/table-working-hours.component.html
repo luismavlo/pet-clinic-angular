@@ -1,5 +1,6 @@
-<table class="min-w-full bg-white border border-gray-300">
-  <thead>
+@defer (when !workingHourService.loading()){
+  <table class="min-w-full bg-white border border-gray-300">
+    <thead>
     <tr>
       <th class="py-2 px-4 border-b text-start">Empleado</th>
       <th class="py-2 px-4 border-b text-start">Duración de consulta</th>
@@ -7,26 +8,28 @@
       <th class="py-2 px-4 border-b text-start">Fecha Inicio / Fin</th>
       <th class="py-2 px-4 border-b text-start">Acción</th>
     </tr>
-  </thead>
-  <tbody>
-    @for (workingHour of workingHours(); track workingHour.id) {
-      <tr>
-        <td class="py-2 px-4 border-b">{{ workingHour.employees.email }}</td>
-        <td class="py-2 px-4 border-b">{{ workingHour.appointment_duration }}</td>
-        <td class="py-2 px-4 border-b">{{ workingHour.shift_duration }}</td>
-        <td class="py-2 px-4 border-b">{{ workingHour.start_date }} - {{ workingHour.end_date }} </td>
-        <td class="py-2 px-4 border-b">
-          <button
-            (click)="selectWorkingHour(workingHour)"
-            class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition-colors mr-2"
-          >
-            Seleccionar
-          </button>
-        </td>
-      </tr>
-    }
-    
+    </thead>
+    <tbody>
+      @for (workingHour of workingHourService.workingHours(); track workingHour.id) {
+        <tr>
+          <td class="py-2 px-4 border-b">{{ workingHour.employees.email }}</td>
+          <td class="py-2 px-4 border-b">{{ workingHour.appointment_duration }}</td>
+          <td class="py-2 px-4 border-b">{{ workingHour.shift_duration }}</td>
+          <td class="py-2 px-4 border-b">{{ workingHour.start_date }} - {{ workingHour.end_date }} </td>
+          <td class="py-2 px-4 border-b">
+            <button
+              (click)="selectWorkingHour(workingHour)"
+              class="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition-colors mr-2"
+            >
+              Seleccionar
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
 
+} @placeholder () {
+  <app-loading></app-loading>
+}
 
-  </tbody>
-</table>

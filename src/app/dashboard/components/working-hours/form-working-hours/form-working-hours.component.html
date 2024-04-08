@@ -56,10 +56,9 @@
         name="employee_id"
         id="employee_id"
       >
-        <option>Luis Miguel</option>
-        <option>Jesus</option>
-        <option>Laura</option>
-        <option>Pedro</option>
+        @for (employee of employeeService.employees(); track employee.id){
+          <option [value]="employee.id">{{ employee.users.name }}</option>
+        }
       </select>
       @if(formWorkingHour.touched){
         <span customLabel [errors]="formWorkingHour.get('employee_id')?.errors" id="name-error" class="text-red-500"></span>

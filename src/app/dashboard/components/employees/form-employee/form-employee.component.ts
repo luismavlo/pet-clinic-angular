@@ -48,16 +48,16 @@ export class FormEmployeeComponent {
       })
     ).subscribe((resp: any) => {
       this.updateEmployee = true;
-      this.formEmployee.get('name')?.setValue(resp.data.users.name)
-      this.formEmployee.get('surname')?.setValue(resp.data.users.surname)
-      this.formEmployee.get('dni')?.setValue(resp.data.users.dni)
-      this.formEmployee.get('email')?.setValue(resp.data.email)
-      this.formEmployee.get('phone')?.setValue(resp.data.phone)
-      this.formEmployee.get('genre')?.setValue(resp.data.users.genre)
-      this.formEmployee.get('photo')?.setValue(resp.data.users.photo)
-      this.formEmployee.get('occupation')?.setValue(resp.data.occupation)
-      this.formEmployee.get('gross_salary')?.setValue(resp.data.gross_salary)
-      this.formEmployee.get('password')?.setValue(resp.data.password)
+      this.formEmployee.get('name')?.setValue(resp.data?.users?.name)
+      this.formEmployee.get('surname')?.setValue(resp.data?.users?.surname)
+      this.formEmployee.get('dni')?.setValue(resp.data?.users.dni)
+      this.formEmployee.get('email')?.setValue(resp.data?.email)
+      this.formEmployee.get('phone')?.setValue(resp.data?.phone)
+      this.formEmployee.get('genre')?.setValue(resp.data?.users.genre)
+      this.formEmployee.get('photo')?.setValue(resp.data?.users.photo)
+      this.formEmployee.get('occupation')?.setValue(resp.data?.occupation)
+      this.formEmployee.get('gross_salary')?.setValue(resp.data?.gross_salary)
+      this.formEmployee.get('password')?.setValue(resp.data?.password)
     })
   }
 

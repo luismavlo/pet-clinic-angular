@@ -15,13 +15,13 @@ export class SpecieService {
   private baseURL: string = 'http://localhost/api';
   private http = inject( HttpClient );
 
-  #statePet = signal<State>({
+  #stateSpecie = signal<State>({
     loading: true,
     species: []
   })
 
-  public species = computed(() => this.#statePet().species);
-  public loading = computed(() => this.#statePet().loading);
+  public species = computed(() => this.#stateSpecie().species);
+  public loading = computed(() => this.#stateSpecie().loading);
 
   #specieSelected? = signal<any>({});
 
@@ -49,8 +49,7 @@ export class SpecieService {
   getSpecies(){
     this.http.get(`${this.baseURL}/specie`)
       .subscribe((res: any) => {
-        console.log(res)
-        this.#statePet.set({
+        this.#stateSpecie.set({
           loading: false,
           species: res.data.data
         })
