@@ -50,7 +50,6 @@ export class FormClientComponent implements OnInit {
       (client: any) => {
         if(client.data.email.length >= 1){
           this.showData = true;
-          console.log('entro')
         }
         this.formClient.get('name')?.setValue(client.data.users.name)
         this.formClient.get('surname')?.setValue(client.data.users.surname)
